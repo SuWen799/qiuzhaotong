@@ -1,0 +1,10 @@
+-- 预置参考素材 seed
+DELETE FROM reference_files WHERE path LIKE '%uploads/references%';
+INSERT INTO reference_files (category, filename, path, content_hash, size, note, uploaded_at) VALUES ('', '个人信息.json', 'D:/qiuzhaohub/uploads/references/个人信息.json', '6837aee993754bdede4511e0d002c701', 183, '初始预置素材', NOW());
+INSERT INTO reference_files (category, filename, path, content_hash, size, note, uploaded_at) VALUES ('', '教育背景.json', 'D:/qiuzhaohub/uploads/references/教育背景.json', '0e303eb63a9bc594452f35a72a3190af', 348, '初始预置素材', NOW());
+INSERT INTO reference_files (category, filename, path, content_hash, size, note, uploaded_at) VALUES ('', '核心能力.json', 'D:/qiuzhaohub/uploads/references/核心能力.json', '4027e6e4197e8deb5861da84676b99ab', 1109, '初始预置素材', NOW());
+INSERT INTO reference_files (category, filename, path, content_hash, size, note, uploaded_at) VALUES ('', '证件照.jpg', 'D:/qiuzhaohub/uploads/references/证件照.jpg', '150ebd0d08b255c4f4b1b4d58653906d', 28578, '初始预置素材', NOW());
+INSERT INTO reference_files (category, filename, path, content_hash, size, note, uploaded_at) VALUES ('实习', '示例公司A.json', 'D:/qiuzhaohub/uploads/references/实习经历/示例公司A.json', '76881b2287b140724754a71ab3e3e0f5', 1982, '初始预置素材', NOW());
+INSERT INTO reference_files (category, filename, path, content_hash, size, note, uploaded_at) VALUES ('实习', '示例公司D.json', 'D:/qiuzhaohub/uploads/references/实习经历/示例公司D.json', '59704bd02ef0050db3872e04494ed52a', 2767, '初始预置素材', NOW());
+INSERT INTO reference_files (category, filename, path, content_hash, size, note, uploaded_at) VALUES ('实习', '示例公司E.json', 'D:/qiuzhaohub/uploads/references/实习经历/示例公司E.json', 'a0600fa2955c7ed3ee6968213556c53f', 2032, '初始预置素材', NOW());
+INSERT INTO reference_files (category, filename, path, content_hash, size, note, uploaded_at) VALUES ('证书', '荣誉证书.json', 'D:/qiuzhaohub/uploads/references/证书/荣誉证书.json', '08781ff77911e1ef08041c1dba3dd3b9', 221, '初始预置素材', NOW());

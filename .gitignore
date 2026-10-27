@@ -1,0 +1,126 @@
+﻿# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+target/
+build/
+dist/
+*.jar
+*.war
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+venv/
+env/
+.venv/
+
+# IDE & Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.iml
+.project
+.classpath
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+*.err
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Browser / crawler data & cache
+data/feishu-profile/
+data/feishu-wanqing/
+data/douyin-profile/
+resume-engine/jd_cache/
+
+# Crawler output artifacts (cookies / videos / transcripts)
+outputs/
+
+# Test / temp images
+_test_*.png
+_test_*.jpg
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Misc / 备份文件（*.bak* 一次覆盖 .bak / .bak. / .bak- / .bak_ 各种分隔写法）
+*.bak*
+*.tmp
+*.temp
+
+# Vite temp files
+vite.config.js.timestamp-*.mjs
+
+# Debug & temp output
+_debug_err*.txt
+_debug_out/
+_dl_new.md
+fix_resp.txt
+
+# LLM debug logs
+resume-engine/llm_err.txt
+resume-engine/real_llm_err.txt
+resume-engine/real_llm_out.txt
+
+# Crawler auto-generated .latest pointer files
+data/*.latest
+
+# Browser profiles (chromium/edge)
+plugin/chromium-profile/
+plugin/edge-profile/
+
+# Plugin debug screenshots
+plugin/probe.png
+plugin/resume-fill-plugin/fill_result*.png
+plugin/resume-fill-plugin/probe.png
+
+# Backend helper scripts & temp data
+backend/base_snapshot.json
+backend/make_original.py
+backend/seed_original.py
+backend/seed_original.sql
+backend/variable_modules.json
+
+# Root-level temp scripts
+check_aobi*.py
+check_fields.py
+check_versions.py
+gen_aobi.py
+
+# Plugin test & diagnostic scripts
+plugin/test_*.py
+plugin/diag_*.py
+
+# Temp research report
+项目背景调研报告.md
+
+# Resume-engine one-off verify/diagnostic scripts
+resume-engine/_verify_*.py
+
+# Runtime PID file
+backend.pid
+
+# Test browser profiles
+data/__rebuild_test_profile/
+
+# 旧文件归档中一次性排查脚本留下的 npm 依赖清单（非本项目，不入库）
+旧文件归档/package.json
+旧文件归档/package-lock.json

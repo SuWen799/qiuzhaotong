@@ -1,0 +1,83 @@
+{
+  "manifest_version": 3,
+  "name": "秋招通 · 简历智能填充",
+  "short_name": "简历填充",
+  "version": "0.21.27",
+  "description": "秋招通插件：识别当前招聘网页的公司，从后端拉取该公司定制的简历版本，自动填充实习/项目/核心能力等可变模块；基本信息、学历、家庭等不变模块保持不动。",
+  "minimum_chrome_version": "109",
+  "permissions": [
+    "activeTab",
+    "debugger",
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "简历快填",
+    "default_popup": "popup/popup.html"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "commands": {
+    "era-fill-page": {
+      "suggested_key": {
+        "default": "Alt+Shift+F"
+      },
+      "description": "扫描并填写当前页面"
+    },
+    "era-toggle-assistant": {
+      "suggested_key": {
+        "default": "Alt+Shift+R"
+      },
+      "description": "打开或关闭页面面板"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_start",
+      "css": [
+        "content/content.css"
+      ],
+      "js": [
+        "shared/profile-normalizer.js",
+        "shared/company-detector.js",
+        "shared/plugin-api.js",
+        "shared/matcher.js",
+        "shared/filler.js",
+        "shared/record-waiter.js",
+        "content/content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "data/profile.json",
+        "assets/private/*",
+        "shared/page-react-bridge.js",
+        "shared/profile-normalizer.js",
+        "shared/ui-helpers.js",
+        "shared/content-injector.js",
+        "shared/record-waiter.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

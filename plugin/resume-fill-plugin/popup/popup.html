@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>秋招通 · 简历智能填充</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span>秋</span>
+        <div>
+          <h1>秋招通 · 简历填充</h1>
+          <small>识别公司 → 拉取定制简历 → 填充可变模块</small>
+        </div>
+      </div>
+      <button id="settingsToggle" class="icon-btn" type="button" title="配置后端地址与令牌">配置</button>
+    </header>
+
+    <!-- 配置区（默认收起） -->
+    <section id="configPanel" class="config-card" hidden>
+      <label class="field">
+        <span>后端地址（Base URL）</span>
+        <input id="baseUrl" type="text" placeholder="http://127.0.0.1:8080/api">
+      </label>
+      <label class="field">
+        <span>访问令牌（Token）</span>
+        <input id="token" type="text" placeholder="qzh_plugin_token_...">
+      </label>
+      <div class="config-actions">
+        <button id="saveConfig" type="button" class="primary">保存配置</button>
+        <button id="testConfig" type="button">测试连接</button>
+      </div>
+      <p id="configFeedback" class="feedback"></p>
+    </section>
+
+    <!-- 当前公司 + 重选 / 搜索 -->
+    <section class="status-card" id="companyCard">
+      <span class="label">当前公司</span>
+      <strong id="companyState">未识别</strong>
+      <small id="companyMeta">打开招聘网站表单后，点击下方按钮自动识别。</small>
+      <div class="company-actions">
+        <button id="detectBtn" type="button" class="primary">
+          <b>重新检测</b>
+          <small>从页面标题与正文提取公司名</small>
+        </button>
+      </div>
+      <label class="field version-field">
+        <span>选择简历版本</span>
+        <select id="versionSelect" disabled>
+          <option value="">请先识别公司</option>
+        </select>
+      </label>
+      <div id="candidates" class="candidates" hidden></div>
+    </section>
+
+    <!-- 手动搜索兜底 -->
+    <section class="search-card">
+      <span class="label">识别失败？搜索 / 选择其他公司</span>
+      <input id="searchInput" type="text" placeholder="输入或搜索公司名…" autocomplete="off">
+      <ul id="searchResults" class="search-results" hidden></ul>
+    </section>
+
+    <!-- 拉取并填充 -->
+    <button id="fillBtn" type="button" class="primary wide" disabled>
+      <b>拉取并填充</b>
+      <small>用所选版本替换可变模块（基本信息/学历/家庭不动）</small>
+    </button>
+
+    <p id="feedback" class="feedback" aria-live="polite"></p>
+  </main>
+
+  <script src="../shared/plugin-api.js"></script>
+  <script src="../shared/company-detector.js"></script>
+  <script src="../shared/content-injector.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

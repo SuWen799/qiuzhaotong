@@ -1,0 +1,54 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/qiuzhaohub
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+    open-in-view: false
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+  # 文件存储根目录（绝对路径，Windows 风格）
+  file:
+    upload-dir: D:/qiuzhaohub/uploads
+
+# 项目文档（"项目文档"页面）目录：用户撰写的实习/项目经历 md 素材真实存放地。
+# 生成简历时后端会自动把此目录下的 md 转为引擎可读的 JSON（写入 REFERENCES_DIR/实习经历），无需手动同步。
+material:
+  dir: C:/Users/<你的Windows用户名>/Desktop/秋招文件/项目介绍
+
+# ===== 登录/JWT 配置（登录功能已临时移除，以下配置当前不生效，保留便于恢复）=====
+jwt:
+  secret: ${JWT_SECRET:change-me-in-production}
+  expiration-ms: 86400000   # 24h（原登录 token 有效期；登录功能停用后无意义）
+
+plugin:
+  # 插件访问令牌（初始值，首次启动若库为空则写入 settings）
+  access-token: qzh_plugin_token_8f3c2a1b9e7d6f4c5a0b1c2d3e4f5a6b
+  # 插件资料编辑 profile.json 权威路径
+  profile-path: C:/Users/<你的Windows用户名>/Desktop/秋招文件/秋招助手/秋招通/plugin/resume-fill-plugin/data/profile.json
+  # 前端在线简历版本文件存放根目录（versions 子目录下为 <company>.json）
+  data-dir: D:/qiuzhaohub/uploads/plugin
+
+logging:
+  level:
+    com.qiuzhaohub: INFO
+    org.springframework.security: INFO

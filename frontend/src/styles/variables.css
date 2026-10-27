@@ -1,0 +1,92 @@
+/* ============================================================
+ * 秋招通 · 全局样式变量（"官网汇总"风格统一规范）
+ * 主色取自官网汇总三页（Companies / CompaniesDelivery / CompaniesTrend）：
+ *   - 主色 #1a73e8（蓝）、成功/投递绿 #4caf50、危险红 #c62828
+ *   - 背景 #f5f7fa、卡片白底 + 圆角 8px + 轻阴影 0 2px 8px rgba(0,0,0,0.08)
+ *   - 表格表头 #f8f9fa、行 hover #f8faff、链接蓝 #1a73e8
+ * 同时覆盖 Element Plus 主题变量，保证 el-button 等组件与其余页面风格一致。
+ * ============================================================ */
+
+:root {
+  /* 主色 / 衍生 */
+  --qz-primary: #1a73e8;
+  --qz-primary-hover: #4d92ed;
+  --qz-primary-active: #1557b0;
+  --qz-primary-light: #e8f0fe;
+
+  /* 功能色 */
+  --qz-success: #4caf50;
+  --qz-success-light: #e8f5e9;
+  --qz-warning: #ff9800;
+  --qz-warning-light: #fff3e0;
+  --qz-danger: #c62828;
+  --qz-danger-light: #ffebee;
+  --qz-link: #1a73e8;
+
+  /* 背景 / 文字 */
+  --qz-bg: #f5f7fa;
+  --qz-surface: #ffffff;
+  --qz-text: #303133;
+  --qz-text-secondary: #666666;
+  --qz-text-muted: #999999;
+  --qz-border: #e0e0e0;
+  --qz-border-light: #f0f0f0;
+
+  /* 卡片 / 阴影 / 圆角 */
+  --qz-radius-sm: 4px;
+  --qz-radius: 8px;
+  --qz-radius-lg: 12px;
+  --qz-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --qz-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  /* 间距 */
+  --qz-gap: 15px;
+  --qz-padding: 20px;
+
+  /* 字体大小 */
+  --qz-font-xs: 12px;
+  --qz-font-sm: 13px;
+  --qz-font-base: 14px;
+  --qz-font-md: 15px;
+  --qz-font-lg: 20px;
+
+  /* ===== 覆盖 Element Plus 主题变量，使其与官网汇总风格一致 ===== */
+  --el-color-primary: #1a73e8;
+  --el-color-primary-light-3: #4d92ed;
+  --el-color-primary-light-5: #8db8f3;
+  --el-color-primary-light-7: #c3d9f9;
+  --el-color-primary-light-8: #d9e7fb;
+  --el-color-primary-light-9: #eef4fd;
+  --el-color-primary-dark-2: #1557b0;
+  --el-color-success: #4caf50;
+  --el-color-danger: #c62828;
+  --el-color-warning: #ff9800;
+  --el-border-radius-base: 8px;
+}
+
+/* ===== 全局 el-button 类型使用规范 ===== */
+/* 约定：主操作用 primary，下载/预览用 success 或 info，删除用 danger。
+   统一圆角与字体，使其与官网汇总卡片风格一致（均由上面的变量驱动）。 */
+.el-button {
+  border-radius: var(--qz-radius-sm);
+  font-size: var(--qz-font-base);
+}
+/* 预览/下载按钮（success / info）保持与官网汇总"蓝链接 + 浅蓝底"一致 */
+.el-button--success {
+  --el-button-bg-color: var(--qz-success);
+  --el-button-border-color: var(--qz-success);
+  --el-button-hover-bg-color: #5cb85c;
+  --el-button-hover-border-color: #5cb85c;
+}
+.el-button--info {
+  --el-button-bg-color: var(--qz-primary);
+  --el-button-border-color: var(--qz-primary);
+  --el-button-hover-bg-color: var(--qz-primary-hover);
+  --el-button-hover-border-color: var(--qz-primary-hover);
+}
+.el-button--danger {
+  --el-button-bg-color: var(--qz-danger);
+  --el-button-border-color: var(--qz-danger);
+  --el-button-hover-bg-color: #e53935;
+  --el-button-hover-border-color: #e53935;
+}

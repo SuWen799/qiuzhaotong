@@ -1,0 +1,345 @@
+.era-mark {
+  outline: 2px solid rgba(47, 111, 237, 0.45) !important;
+  outline-offset: 2px !important;
+}
+
+.era-mark-filled {
+  outline-color: rgba(22, 163, 74, 0.72) !important;
+}
+
+.era-mark-skip {
+  outline-color: rgba(217, 119, 6, 0.72) !important;
+}
+
+.era-mark-failed {
+  outline-color: rgba(220, 38, 38, 0.72) !important;
+}
+
+#era-launcher,
+#era-panel {
+  color: #172033;
+  font: 13px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+#era-launcher {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2147483647;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(18, 59, 93, 0.22);
+  border-radius: 8px;
+  background: #123b5d;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.24);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+#era-launcher[data-state="active"] {
+  background: #176b87;
+}
+
+#era-panel {
+  position: fixed;
+  right: 18px;
+  bottom: 74px;
+  z-index: 2147483647;
+  width: min(360px, calc(100vw - 36px));
+  max-height: min(620px, calc(100vh - 96px));
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  border: 1px solid #d7e0ea;
+  border-radius: 8px;
+  background: #fbfcff;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.24);
+}
+
+#era-panel[hidden] {
+  display: none;
+}
+
+.era-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #e6ebf3;
+}
+
+.era-panel-title {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.era-panel-title strong,
+.era-panel-title span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.era-panel-title strong {
+  font-size: 15px;
+}
+
+.era-panel-title span,
+.era-panel-meta,
+.era-panel-summary {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.era-panel-close {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d7e0ea;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #475569;
+  cursor: pointer;
+}
+
+.era-panel-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.era-stat {
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid #e3e9f2;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.era-stat b,
+.era-stat span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.era-stat b {
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.era-stat span {
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.era-panel-version {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eef2f7;
+  background: #ffffff;
+}
+
+.era-panel-version label {
+  flex-shrink: 0;
+  color: #475569;
+  font-size: 12px;
+}
+
+.era-panel-version select {
+  flex: 1;
+  min-width: 0;
+  min-height: 28px;
+  padding: 4px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #172033;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.era-panel-version select:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.era-panel-actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.era-panel-actions button {
+  min-width: 0;
+  min-height: 32px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #172033;
+  cursor: pointer;
+  font: inherit;
+}
+
+.era-panel-actions button[data-primary="true"] {
+  border-color: #176b87;
+  background: #176b87;
+  color: #ffffff;
+}
+
+.era-panel-actions button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.era-panel-body {
+  min-height: 122px;
+  overflow: auto;
+  padding: 10px 12px 12px;
+}
+
+.era-panel-summary {
+  margin: 0 0 8px;
+}
+
+.era-panel-summary[data-kind="error"] {
+  color: #991b1b;
+}
+
+.era-panel-list {
+  display: grid;
+}
+
+.era-panel-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding: 8px 0;
+  border-top: 1px solid #eef2f7;
+}
+
+.era-panel-item:first-child {
+  border-top: 0;
+}
+
+.era-panel-item span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.era-panel-item b {
+  color: #176b87;
+  font-weight: 800;
+}
+
+.era-panel-item b[data-kind="skip"] {
+  color: #b45309;
+}
+
+@media (max-width: 480px) {
+  #era-launcher {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  #era-panel {
+    right: 12px;
+    bottom: 66px;
+    width: calc(100vw - 24px);
+  }
+}
+
+/* 秋招通：自动识别公司后的非侵入式悬浮标签（右下角小标签） */
+#era-autofill-tag {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 320px;
+  padding: 9px 10px 9px 12px;
+  border: 1px solid #bcd4e6;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(15, 42, 71, 0.18);
+  font: 12px/1.35 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+#era-autofill-tag.era-autofill-fade {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+.era-autofill-tag-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.era-autofill-tag-title {
+  font-weight: 700;
+}
+
+.era-autofill-tag-sub {
+  color: #64748b;
+}
+
+.era-autofill-tag-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.era-autofill-fill {
+  border: 1px solid #176b87;
+  border-radius: 7px;
+  background: #176b87;
+  color: #fff;
+  padding: 6px 10px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.era-autofill-fill:hover {
+  background: #125a72;
+}
+
+.era-autofill-close {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #475569;
+  cursor: pointer;
+  font: 14px/1 sans-serif;
+  line-height: 1;
+}

@@ -1,0 +1,12 @@
+{
+  "technical": [
+    "**大模型与多智能体编排**：熟练 LangGraph / AutoGen 多智能体编排，掌握 MCP / ACP / A2A 工具协议与 ReAct + Tool-Calling 运行时，能将检索、数据库与业务系统统一编排为 Agent 执行流；熟练 Cursor / Claude Code / Copilot / Codex CLI 等 AI 编程工具做需求分析、开发与调试。",
+    "**RAG 与检索增强**：熟练 RAG 全链路（zvec 向量库、双路召回 / RRF / Cross-Encoder 重排）与混合检索（Qdrant / Elasticsearch 了解），能基于知识图谱构建可推理问答。",
+    "**AI 工程化、评测与可观测**：熟悉 Docker / K8s 容器化、分布式 Worker 调度与高可用、全链路可观测（SSE / Token 统计）；熟悉 Agent 评测体系、Golden Dataset 与 fail-closed 门禁，形成'评测→整改→复评'闭环。",
+    "**后端开发（Python / Java）**：熟练 Python（FastAPI / Flask / AgentScope）与 Java 21 / Spring Boot 后端开发，熟悉 gRPC / RESTful 接口设计与多租户、RBAC、JWT / Sa-Token 鉴权。",
+    "**前端开发（Vue / React / Next.js）**：熟练 Vue 3 / React 19 / Next.js 前端开发，掌握组件化、状态管理与前后端联调，能基于 Spring Cloud 微服务做服务拆分与网关集成。",
+    "**GIS 三维可视化与空间计算**：熟练 Cesium / Mars3D / OpenLayers 三维与 GIS 可视化（双相机联动、3DTiles / WMTS 图层）及 ECharts 看板；掌握 JTS / WKB 空间计算与 YOLO 目标检测。",
+    "**数据库、缓存与实时管道**：熟练 PostgreSQL（PostGIS / TimescaleDB）/ MySQL 与 Redis，熟悉 SQL 调优、索引优化与 Redis 缓存；熟悉 WebSocket / MQTT(EMQX) / DDS 实时管道与 dynamic-datasource 双数据源切换。",
+    "**C++ 智能驾驶定位专项**：熟悉 C++17 车载多传感器融合定位（Eigen / Ceres / PCL、EKF / ESKF 紧耦合），掌握交叉编译与车规域控交付（示例平台C / 示例平台D 双平台、ASIL-B），了解惯性导航与卡尔曼滤波融合（IMU / GNSS）。"
+  ]
+}

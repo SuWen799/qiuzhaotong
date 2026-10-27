@@ -1,0 +1,25 @@
+{
+  "company": "北京示例公司D股份有限公司",
+  "role": "全栈开发实习生",
+  "period": "2025.03 ~ 2025.10",
+  "projects": [
+    {
+      "name": "示例城市A市离石区滑坡灾害监测系统",
+      "description": "面向示例城市A市离石区滑坡隐患点位打造的实时监测与分级预警 Web 平台，集中接入野外传感器报文并在三维地图上可视化，按阈值判定四级预警并经短信通知责任人。",
+      "techStack": "Vue 3；Cesium 1；Mars3D；Node.js；Express 5；MQTT(EMQX)；MongoDB；ECharts；Pinia；Element Plus",
+      "highlights": [
+        "**双三维地图联动与 MQTT 接入**：前端 Vue3 协同双 Cesium 实例双相机联动飞行，叠加 OSGB 3DTiles 与 WMTS 图层；后端 Node.js(Express) 订阅 EMQX 的 data/# 主题，按设备+时间戳+内容哈希三重去重，使隐患点位移数据干净连续、地形与正射影像双视角对照辅助研判。",
+        "**四级预警分级与短信触达**：前端按高程变化量与可配置阈值动态判定蓝/黄/橙/红四级预警，阈值本地存储跨页同步；预警经弹窗列表实时展示，责任人经阿里云短信接收，使超阈值预警即时可视、缩短响应时间。"
+      ]
+    },
+    {
+      "name": "示例城市B市国省干线智慧公路管养服务信息化平台",
+      "description": "为示例城市B市国省干线公路养护管理打造的信息化平台，将资产台账、无人机 AI 巡检、实时视频与路况评定统一到 GIS 一张图上进行空间化管养。",
+      "techStack": "Spring Boot 3；MyBatis Plus；dynamic-datasource；PostgreSQL；PostGIS；JTS；FastAPI；ultralytics YOLO；WebSocket；React 19；Vite；OpenLayers；ECharts",
+      "highlights": [
+        "**双数据源 GIS 一张图与空间检索**：后端 dynamic-datasource 配 AOP 按业务切换 MySQL/PostGIS，JTS 编解码 WKB 并用 ST_DWithin/ST_Intersects 检索；前端 OpenLayers 一张图渲染矢量卫星，使分散的公路资产空间化整合、查询定位一致。",
+        "**无人机 YOLO 异步检测与鉴权收口**：后端 FastAPI 异步加载 ultralytics YOLO 检测、asyncio 防阻塞，WebSocket 推多阶段进度；JJWT HS256 写角色 Claim 配 Spring Security 双重控权、Vite 代理收口多后端，把采集识别到权限管控串成闭环、降低前后端耦合。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>资料设置 - 简历快填</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span>填</span><div><strong>简历快填</strong><small>资料设置</small></div></div>
+    <nav>
+      <a href="#profile">资料管理</a>
+      <a href="#sites">支持站点</a>
+      <a href="#privacy">隐私边界</a>
+    </nav>
+  </aside>
+
+  <main>
+    <header class="hero">
+      <p class="eyebrow">Edge 简历智能填充助手</p>
+      <h1>维护本机资料</h1>
+      <p>这里按常见网申模块维护资料。保存后 popup、快捷键和网页助手都会读取同一份本地资料。</p>
+    </header>
+
+    <section id="profile" class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>资料管理</h2>
+          <p id="profileSummary">正在读取资料...</p>
+        </div>
+        <span id="profileSource">加载中</span>
+      </div>
+
+      <div id="sectionOverview" class="overview"></div>
+      <div id="profileForm" class="profile-form" aria-label="资料编辑表单"></div>
+
+      <div class="actions">
+        <button id="saveProfile" class="primary" type="button">保存资料</button>
+        <button id="exportProfile" type="button">导出备份</button>
+        <label for="profileFile">导入备份</label>
+        <button id="resetProfile" class="danger" type="button">恢复内置</button>
+      </div>
+
+      <input id="profileFile" type="file" accept="application/json,.json" hidden>
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="sites" class="panel split">
+      <article>
+        <h2>支持站点</h2>
+        <dl>
+          <div><dt>百度招聘</dt><dd>专项适配简历创建页，支持教育、工作、实习、项目、求职意向等字段。</dd></div>
+          <div><dt>Moka</dt><dd>专项适配申请页，支持下拉、日期和籍贯级联控件。</dd></div>
+          <div><dt>通用网页</dt><dd>使用标签、占位符和上下文做通用匹配，适合普通招聘表单。</dd></div>
+        </dl>
+      </article>
+      <article>
+        <h2>快捷入口</h2>
+        <p class="muted">快捷键：Alt+Shift+F 填写当前页；Alt+Shift+R 打开或关闭网页助手。</p>
+        <h2 style="margin-top:18px">当前填充目标</h2>
+        <p class="muted">由 popup 中“当前公司 / 简历版本”选择决定，此处只读展示。</p>
+        <p id="pluginSelection" class="muted">尚未选择公司。请在浏览器工具栏的插件 popup 中识别并选择公司。</p>
+      </article>
+    </section>
+
+    <section id="privacy" class="panel">
+      <h2>隐私边界</h2>
+      <ul>
+        <li>资料保存在扩展本地存储或扩展目录内置 JSON 中。</li>
+        <li>扫描、匹配和填写都在当前浏览器页面内执行。</li>
+        <li>插件不会自动点击保存、提交、签名、声明确认或上传附件。</li>
+        <li>导出备份会生成一个本地 JSON 文件，请不要把包含个人资料的文件夹发给别人。</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="../shared/profile-normalizer.js"></script>
+  <script src="../shared/ui-helpers.js"></script>
+  <script src="../shared/plugin-api.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 330px;
+  margin: 0;
+  background: #eef3f8;
+  color: #142033;
+  font: 13px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.shell {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.topbar,
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.topbar {
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.brand {
+  min-width: 0;
+  gap: 10px;
+}
+
+.brand > span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #123b5d;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+h1 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+small,
+.label,
+.feedback {
+  color: #64748b;
+}
+
+.icon-btn,
+button {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #172033;
+  cursor: pointer;
+}
+
+.icon-btn {
+  min-width: 54px;
+  height: 34px;
+}
+
+.status-card {
+  min-height: 76px;
+  padding: 10px;
+  border: 1px solid #d6dfeb;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.status-card strong,
+.status-card small,
+.status-card .label {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-card .label {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.status-card strong {
+  margin: 4px 0 2px;
+  font-size: 19px;
+  font-weight: 800;
+  color: #123b5d;
+}
+
+.status-card.ok {
+  border-color: #8cc7a4;
+}
+
+.status-card.warning {
+  border-color: #e2bb72;
+}
+
+.company-actions {
+  display: block;
+  margin-top: 8px;
+}
+
+.version-field {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #334155;
+}
+
+.version-field select {
+  width: 100%;
+  padding: 7px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font: inherit;
+  background: #fff;
+}
+
+.company-actions .primary {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.primary-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.primary-actions button {
+  min-height: 58px;
+  padding: 9px 10px;
+  text-align: left;
+}
+
+.primary-actions b,
+.primary-actions small {
+  display: block;
+}
+
+button.primary {
+  border-color: #176b87;
+  background: #176b87;
+  color: #ffffff;
+}
+
+button.primary small {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.64;
+}
+
+.feedback {
+  min-height: 20px;
+  margin: 0;
+}
+
+.feedback.error {
+  color: #991b1b;
+}
+
+/* 秋招通插件新增样式 */
+.wide {
+  width: 100%;
+  min-height: 54px;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+.config-card {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid #d6dfeb;
+  border-radius: 8px;
+  background: #f7fafe;
+}
+
+.config-card .field {
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  color: #334155;
+}
+
+.config-card input,
+.search-card input {
+  width: 100%;
+  padding: 7px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font: inherit;
+}
+
+.config-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.config-actions button {
+  flex: 1;
+  min-height: 34px;
+  padding: 6px 8px;
+}
+
+.candidates {
+  display: grid;
+  gap: 6px;
+}
+
+.candidate {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px;
+  text-align: left;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.candidate small {
+  color: #64748b;
+}
+
+.search-card {
+  display: grid;
+  gap: 6px;
+}
+
+.search-card .label {
+  font-size: 12px;
+}
+
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.search-results li {
+  padding: 7px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-results li:hover {
+  background: #eef6fb;
+}

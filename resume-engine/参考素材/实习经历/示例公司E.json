@@ -1,0 +1,18 @@
+{
+  "company": "示例公司E股份有限公司",
+  "role": "AI应用开发实习生",
+  "period": "2025.11 ~ 2026.02",
+  "projects": [
+    {
+      "name": "示例平台B 制造业 Agent 平台",
+      "description": "面向制造业打造的 AI Agent 平台，把一线人员的自然语言与语音诉求翻译成计划排产、智能派工、AI 质检等制造运营动作，覆盖门户、治理与引擎底座。",
+      "techStack": "Spring Boot 3；Java 17 / 21；MyBatis-Plus；Sa-Token；JWT 双 token；Spring Security；Next.js 16；React 19；TypeScript；Tailwind；Vite；Ant Design；AgentScope（Python）；MCP；ACP；A2A；PostgreSQL；Redis",
+      "highlights": [
+        "**多模态接入与多 Agent 编排**：构建本地三件套 FunASR 语音识别 / Qwen3-TTS 语音合成 / PaddleOCR-VL 图文识别（独立 FastAPI 可插拔），对接阿里百炼 Paraformer 实时语音形成云 + 本地双路径，支持数据不出厂离线部署；以 SSE 转发与 13+ Agent 路由打通双后端，多端语音 / 文本 / 图像稳定可用。",
+        "**三层记忆与 RAG 检索增强（zvec 向量库）**：落地三层记忆，知识库索引为 zvec 向量库（ANN + FTS 双路召回），走'父子切片 → 双路召回 → RRF → Cross-Encoder 精排'RAG 管线并增量索引免重传；配沙箱 / 注入防护 / 越界拦截等五层安全，防越权防注入、降低幻觉。",
+        "**MCP 工具编排与多模型网关（协议中立驱动层）**：基于 MCP 协议注册工具并打通 ACP / A2A 多协议，接入 14+ provider 多模型网关按租户调度，形成协议中立驱动层统一治理云端 / 本地模型，配合 RBAC 与多租户隔离，降低供应商绑定、实现工具与模型统一治理。",
+        "**制造运营动作编排与业务闭环**：把一线自然语言与语音诉求经对话编排翻译为计划排产、智能派工、AI 质检等制造运营动作，经 MES 业务数据接口读写 APS/MES/WMS/QMS 生产数据，触发结果回流至运营看板，并将执行经验沉淀为三层记忆与技能、覆盖 示例平台B 六大智管中心，形成'对话—执行—看板—进化'的可持续闭环。"
+      ]
+    }
+  ]
+}
